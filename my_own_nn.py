@@ -18,8 +18,8 @@ y += intercept
 y = y.reshape(len(y),1)
 
 
-
-class NeuralNetwork:
+#Adaption of James Loy's code for a single Node 
+class Node:
     def __init__(self, x, y, l=0.1):
         self.input  = x
         self.weight = np.random.rand() 
