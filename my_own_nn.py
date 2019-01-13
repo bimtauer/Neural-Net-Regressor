@@ -8,10 +8,10 @@ from sklearn.datasets import make_regression
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401 unused import
+from mpl_toolkits.mplot3d import Axes3D
 
 # Create regression data
-X, y, coef = make_regression(n_samples=100, n_features=1, noise=10, coef = True)
+X, y, coef = make_regression(n_samples=10, n_features=1, noise=10, coef = True)
 #Include bias
 intercept = np.random.randint(-50, 50)
 y += intercept
@@ -83,8 +83,8 @@ def loss_plot(nn):
     losses = []
     for bias in biases:
         for weight in weights:
-            pred = np.dot(X.T, weight).T + bias
-            loss = (np.sum((y - pred) ** 2)) / len(X)
+            pred = np.dot(X.T, weight) + bias
+            loss = (np.sum((y - pred.T) ** 2)) / len(X)
             losses.append(loss)
     
     losses = np.array(losses).reshape(100, 100)
