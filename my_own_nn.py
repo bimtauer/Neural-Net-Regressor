@@ -19,7 +19,7 @@ y = y.reshape(len(y),1)
 
 
 #Adaption of James Loy's code for a single Node 
-class Node:
+class NeuralNetwork:
     def __init__(self, x, y, l=0.1):
         self.input  = x
         self.weight = np.random.rand() 
